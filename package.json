@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "express": "^4.19.2",
-    "mariadb": "^3.4.0"
+    "mariadb": "^3.4.0",
+    "mysql2": "^3.17.1"
   }
 }
