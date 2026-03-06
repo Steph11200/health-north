@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health North | Spécialistes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Spécialistes</h1>
+
+    <div class="card">
+      <label>
+        Filtrer par spécialité
+        <input id="filter" type="text" placeholder="ex: Radiologie" />
+      </label>
+
+      <button onclick="loadSpecialistes()">Rechercher</button>
+
+      <table id="specTable" style="width:100%; border-collapse: collapse; margin-top:10px;">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Spécialité</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <button onclick="goBack()">Retour</button>
+    </div>
+  </main>
+
+  <script>
+    const API_BASE = "http://localhost:3000";
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      window.location.href = "index.html";
+    }
+
+    async function loadSpecialistes() {
+      const filter = document.getElementById("filter").value.trim();
+      const url = filter
+        ? `${API_BASE}/specialistes?specialite=${encodeURIComponent(filter)}`
+        : `${API_BASE}/specialistes`;
+
+      const res = await fetch(url, {
+        headers: { "Authorization": "Bearer " + token }
+      });
+
+      if (!res.ok) {
+        alert("Erreur chargement spécialistes");
+        return;
+      }
+
+      const data = await res.json();
+      const tbody = document.querySelector("#specTable tbody");
+      tbody.innerHTML = "";
+
+      data.forEach(s => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${s.nom}</td>
+          <td>${s.prenom}</td>
+          <td>${s.specialite || ""}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function goBack() {
+      window.location.href = "dashboard.html";
+    }
+
+    loadSpecialistes();
+  </script>
+</body>
+</html>

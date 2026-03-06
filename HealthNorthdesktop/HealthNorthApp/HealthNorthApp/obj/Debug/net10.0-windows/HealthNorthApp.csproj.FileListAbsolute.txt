@@ -1,0 +1,135 @@
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.exe
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.deps.json
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.runtimeconfig.json
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.pdb
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.LoginForm.resources
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.csproj.GenerateResource.cache
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.AssemblyInfoInputs.cache
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.AssemblyInfo.cs
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.csproj.CoreCompileInputs.cache
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\refint\HealthNorthApp.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.pdb
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.genruntimeconfig.cache
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\ref\HealthNorthApp.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.Forms.PlanningForm.resources
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.Forms.AddDocumentForm.resources
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.csproj.AssemblyReference.cache
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.Forms.FactureForm.resources
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.barcodes.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.bouncy-castle-connector.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.forms.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.io.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.kernel.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.layout.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.pdfa.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.pdfua.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.sign.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.styledxmlparser.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.svg.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.commons.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyModel.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Newtonsoft.Json.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNo.280DD9B7.Up2Date
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\BouncyCastle.Crypto.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.bouncy-castle-adapter.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.exe
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.deps.json
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.runtimeconfig.json
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.pdb
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\BouncyCastle.Crypto.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.barcodes.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.bouncy-castle-connector.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.forms.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.io.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.kernel.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.layout.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.pdfa.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.pdfua.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.sign.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.styledxmlparser.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.svg.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.bouncy-castle-adapter.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.commons.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyModel.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Newtonsoft.Json.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.csproj.AssemblyReference.cache
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.Forms.AddDocumentForm.resources
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.Forms.FactureForm.resources
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.Forms.PlanningForm.resources
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.LoginForm.resources
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.csproj.GenerateResource.cache
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.AssemblyInfoInputs.cache
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.AssemblyInfo.cs
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.csproj.CoreCompileInputs.cache
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNo.280DD9B7.Up2Date
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\refint\HealthNorthApp.dll
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.pdb
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.genruntimeconfig.cache
+C:\Users\itins\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\ref\HealthNorthApp.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.exe
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.deps.json
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.runtimeconfig.json
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthApp.pdb
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\BouncyCastle.Crypto.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.barcodes.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.bouncy-castle-connector.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.forms.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.io.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.kernel.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.layout.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.pdfa.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.pdfua.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.sign.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.styledxmlparser.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.svg.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.bouncy-castle-adapter.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\itext.commons.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyModel.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\Newtonsoft.Json.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.csproj.AssemblyReference.cache
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.Forms.AddDocumentForm.resources
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.Forms.FactureForm.resources
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.Forms.PlanningForm.resources
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.LoginForm.resources
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.csproj.GenerateResource.cache
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.AssemblyInfoInputs.cache
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.AssemblyInfo.cs
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.csproj.CoreCompileInputs.cache
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNo.280DD9B7.Up2Date
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\refint\HealthNorthApp.dll
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.pdb
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.genruntimeconfig.cache
+C:\Users\itins\Projet HealthNorth\HealthNorthdesktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\ref\HealthNorthApp.dll

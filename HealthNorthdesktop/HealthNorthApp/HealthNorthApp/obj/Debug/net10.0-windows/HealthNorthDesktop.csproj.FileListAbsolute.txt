@@ -1,0 +1,16 @@
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthDesktop.exe
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthDesktop.deps.json
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthDesktop.runtimeconfig.json
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthDesktop.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\bin\Debug\net10.0-windows\HealthNorthDesktop.pdb
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthApp.LoginForm.resources
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthDesktop.csproj.GenerateResource.cache
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthDesktop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthDesktop.AssemblyInfoInputs.cache
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthDesktop.AssemblyInfo.cs
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthDesktop.csproj.CoreCompileInputs.cache
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthDesktop.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\refint\HealthNorthDesktop.dll
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthDesktop.pdb
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\HealthNorthDesktop.genruntimeconfig.cache
+C:\Users\itins\Projet2desktop\HealthNorthApp\HealthNorthApp\obj\Debug\net10.0-windows\ref\HealthNorthDesktop.dll

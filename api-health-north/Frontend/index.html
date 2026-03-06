@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health North | Connexion</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Connexion patient</h1>
+
+    <form id="loginForm" class="card">
+      <label>
+        Email
+        <input id="email" type="email" required autocomplete="email" placeholder="stephanie@mail.com" />
+      </label>
+
+      <label>
+        Mot de passe
+        <input id="motDePasse" type="password" required autocomplete="current-password" placeholder="••••••••" />
+      </label>
+
+      <button type="submit">Se connecter</button>
+
+      <p id="msg" class="msg" aria-live="polite"></p>
+    </form>
+    <p style="text-align:center;">
+      Pas de compte ? <a href="register.html">Créer un compte</a>
+    </p>
+    <p style="text-align:center;">
+  Espace admin ? <a href="admin-login.html">Connexion administrateur</a>
+</p>
+  </main>
+
+  <script>
+    const API_BASE = "http://localhost:3000";
+
+    // Si déjà connecté, on va directement au dashboard
+    const existingToken = localStorage.getItem("token");
+    if (existingToken) {
+      window.location.href = "dashboard.html";
+    }
+
+    const form = document.getElementById("loginForm");
+    const msg = document.getElementById("msg");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      msg.textContent = "";
+
+      const email = document.getElementById("email").value.trim();
+      const motDePasse = document.getElementById("motDePasse").value;
+
+      try {
+        const res = await fetch(`${API_BASE}/auth/patient/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, motDePasse })
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          msg.textContent = data.message || "Connexion impossible.";
+          return;
+        }
+
+        if (!data.token) {
+          msg.textContent = "Token manquant dans la réponse.";
+          return;
+        }
+
+        localStorage.setItem("token", data.token);
+        console.log("TOKEN SAVED =", localStorage.getItem("token"));
+        window.location.href = "dashboard.html";
+
+      } catch (err) {
+        msg.textContent = "Erreur réseau (API éteinte ?).";
+      }
+    });
+  </script>
+</body>
+</html>

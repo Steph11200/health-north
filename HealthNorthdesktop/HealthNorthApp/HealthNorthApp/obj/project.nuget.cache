@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "dgSpecHash": "0x1Q/jftBT8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\HealthNorthApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\itins\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\itext\\9.5.0\\itext.9.5.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\itext.bouncy-castle-adapter\\9.5.0\\itext.bouncy-castle-adapter.9.5.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\itext.commons\\9.5.0\\itext.commons.9.5.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\itext7\\9.5.0\\itext7.9.5.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\itext7.bouncy-castle-adapter\\9.5.0\\itext7.bouncy-castle-adapter.9.5.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\1.1.0\\microsoft.dotnet.platformabstractions.1.1.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\microsoft.extensions.dependencymodel\\1.1.0\\microsoft.extensions.dependencymodel.1.1.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\itins\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Le package 'BouncyCastle' 1.8.9 présente une vulnérabilité de gravité moyenne connue, https://github.com/advisories/GHSA-8xfc-gm6g-vgpv.",
+      "projectPath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\HealthNorthApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\HealthNorthApp.csproj",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net10.0-windows"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Le package 'BouncyCastle' 1.8.9 présente une vulnérabilité de gravité moyenne connue, https://github.com/advisories/GHSA-m44j-cfrm-g8qc.",
+      "projectPath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\HealthNorthApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\HealthNorthApp.csproj",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net10.0-windows"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Le package 'BouncyCastle' 1.8.9 présente une vulnérabilité de gravité moyenne connue, https://github.com/advisories/GHSA-v435-xc8x-wvr9.",
+      "projectPath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\HealthNorthApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\HealthNorthApp.csproj",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net10.0-windows"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Le package 'Newtonsoft.Json' 9.0.1 présente une vulnérabilité de gravité élevé(e) connue, https://github.com/advisories/GHSA-5crp-9r3c-p9vr.",
+      "projectPath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\HealthNorthApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\HealthNorthApp.csproj",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net10.0-windows"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Le package 'BouncyCastle 1.8.9' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net10.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "projectPath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\HealthNorthApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\HealthNorthApp.csproj",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net10.0-windows"
+      ]
+    }
+  ]
+}

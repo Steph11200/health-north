@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health North | Prendre RDV</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Prendre un rendez-vous</h1>
+
+    <form id="rdvForm" class="card">
+      <label>
+        Région
+        <select id="region" required></select>
+      </label>
+
+      <label>
+        Département
+        <select id="departement" required></select>
+      </label>
+
+      <label>
+        Ville
+        <select id="ville" required></select>
+      </label>
+
+      <label>
+        Examen
+        <select id="idExamen" required></select>
+      </label>
+
+      <div style="font-size:14px; color:#333;">
+        Durée estimée : <strong id="dureeLabel">—</strong>
+      </div>
+
+      <label>
+        Établissement (dans la ville)
+        <select id="idEtablissement" required></select>
+      </label>
+
+      <label>
+        Spécialiste
+        <select id="idSpecialiste" required></select>
+      </label>
+
+      <label>
+        Date
+        <input id="dateRdv" type="date" required />
+      </label>
+
+      <label>
+        Créneau disponible
+        <select id="heureRdv" required></select>
+      </label>
+
+      <button type="submit">Valider le rendez-vous</button>
+      <p id="msg" class="msg" aria-live="polite"></p>
+
+      <button type="button" onclick="goBack()">Retour</button>
+    </form>
+  </main>
+
+  <script>
+    const API_BASE = "http://localhost:3000";
+    const token = localStorage.getItem("token");
+    if (!token) window.location.href = "index.html";
+
+    const regionSelect = document.getElementById("region");
+    const depSelect = document.getElementById("departement");
+    const villeSelect = document.getElementById("ville");
+    const examenSelect = document.getElementById("idExamen");
+    const dureeLabel = document.getElementById("dureeLabel");
+    const etabSelect = document.getElementById("idEtablissement");
+    const specSelect = document.getElementById("idSpecialiste");
+    const dateInput = document.getElementById("dateRdv");
+    const heureSelect = document.getElementById("heureRdv");
+    const msg = document.getElementById("msg");
+
+    let examensCache = [];
+    let etablissementsCache = [];
+    let specialistesCache = [];
+
+    async function fetchJSON(url) {
+      const res = await fetch(url, {
+        headers: { "Authorization": "Bearer " + token }
+      });
+      const data = await res.json().catch(() => null);
+      if (!res.ok) {
+        const m = (data && (data.message || data.error)) ? (data.message || data.error) : ("Erreur API: " + res.status);
+        throw new Error(m);
+      }
+      return data;
+    }
+
+    function setOptions(selectEl, items, getValue, getLabel) {
+      selectEl.innerHTML = "";
+      items.forEach(item => {
+        const opt = document.createElement("option");
+        opt.value = getValue(item);
+        opt.textContent = getLabel(item);
+        selectEl.appendChild(opt);
+      });
+    }
+
+    async function loadRegions() {
+      const regions = await fetchJSON(`${API_BASE}/geo/regions`);
+      setOptions(regionSelect, regions, r => r, r => r);
+    }
+
+    async function loadDepartements() {
+      const region = regionSelect.value;
+      const deps = await fetchJSON(`${API_BASE}/geo/departements?region=${encodeURIComponent(region)}`);
+      setOptions(depSelect, deps, d => d, d => d);
+    }
+
+    async function loadVilles() {
+      const region = regionSelect.value;
+      const dep = depSelect.value;
+      const villes = await fetchJSON(`${API_BASE}/geo/villes?region=${encodeURIComponent(region)}&departement=${encodeURIComponent(dep)}`);
+      setOptions(villeSelect, villes, v => v, v => v);
+    }
+
+    async function loadExamens() {
+      examensCache = await fetchJSON(`${API_BASE}/examens`);
+      setOptions(examenSelect, examensCache, ex => ex.idExamen, ex => ex.libelle);
+      updateDuree();
+    }
+
+    function updateDuree() {
+      const idEx = parseInt(examenSelect.value, 10);
+      const ex = examensCache.find(x => x.idExamen === idEx);
+      dureeLabel.textContent = ex ? `${ex.dureeMinutes} min` : "—";
+    }
+
+    async function loadEtablissementsCache() {
+      etablissementsCache = await fetchJSON(`${API_BASE}/etablissements`);
+    }
+
+    function fillEtablissementsForVille() {
+      const ville = villeSelect.value;
+      const filtered = etablissementsCache.filter(e => e.ville === ville);
+      setOptions(
+        etabSelect,
+        filtered,
+        e => e.idEtablissement,
+        e => `${e.nom} (${e.ville})`
+      );
+    }
+
+    async function loadSpecialistesCache() {
+      specialistesCache = await fetchJSON(`${API_BASE}/specialistes`);
+      setOptions(
+        specSelect,
+        specialistesCache,
+        s => s.idSpecialiste,
+        s => `${s.nom} ${s.prenom} - ${s.specialite || ""}`
+      );
+    }
+
+    async function loadCreneaux() {
+      heureSelect.innerHTML = "";
+
+      const date = dateInput.value;
+      const idSpecialiste = parseInt(specSelect.value, 10);
+      if (!date || !idSpecialiste) return;
+
+      const idEx = parseInt(examenSelect.value, 10);
+      const ex = examensCache.find(x => x.idExamen === idEx);
+      const duree = ex ? ex.dureeMinutes : 30;
+
+      const slots = await fetchJSON(
+        `${API_BASE}/disponibilites?specialiste=${idSpecialiste}&date=${encodeURIComponent(date)}&duree=${duree}`
+      );
+
+      if (!slots || slots.length === 0) {
+        const opt = document.createElement("option");
+        opt.value = "";
+        opt.textContent = "Aucun créneau disponible";
+        heureSelect.appendChild(opt);
+        return;
+      }
+
+      setOptions(heureSelect, slots, h => h, h => h);
+    }
+
+    // Listeners
+    regionSelect.addEventListener("change", async () => {
+      try {
+        await loadDepartements();
+        await loadVilles();
+        fillEtablissementsForVille();
+        await loadCreneaux();
+      } catch (e) { msg.textContent = e.message; }
+    });
+
+    depSelect.addEventListener("change", async () => {
+      try {
+        await loadVilles();
+        fillEtablissementsForVille();
+        await loadCreneaux();
+      } catch (e) { msg.textContent = e.message; }
+    });
+
+    villeSelect.addEventListener("change", async () => {
+      try {
+        fillEtablissementsForVille();
+      } catch (e) { msg.textContent = e.message; }
+    });
+
+    examenSelect.addEventListener("change", async () => {
+      try {
+        updateDuree();
+        await loadCreneaux();
+      } catch (e) { msg.textContent = e.message; }
+    });
+
+    specSelect.addEventListener("change", async () => {
+      try {
+        await loadCreneaux();
+      } catch (e) { msg.textContent = e.message; }
+    });
+
+    dateInput.addEventListener("change", async () => {
+      try {
+        await loadCreneaux();
+      } catch (e) { msg.textContent = e.message; }
+    });
+
+    // Submit
+    document.getElementById("rdvForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      msg.textContent = "";
+
+      if (!heureSelect.value) {
+        msg.textContent = "Choisis un créneau disponible.";
+        return;
+      }
+
+      const idEx = parseInt(examenSelect.value, 10);
+      const ex = examensCache.find(x => x.idExamen === idEx);
+
+      const body = {
+        dateRdv: dateInput.value,
+        heureRdv: heureSelect.value + ":00",
+        typeIntervention: ex ? ex.libelle : "Examen",
+        statut: "Planifié",
+        idEtablissement: parseInt(etabSelect.value, 10),
+        idSpecialiste: parseInt(specSelect.value, 10),
+        idPatient: 999 // ignoré côté API si PATIENT (forcé)
+      };
+
+      try {
+        const idEx = parseInt(examenSelect.value, 10);
+        const ex = examensCache.find(x => x.idExamen === idEx);
+
+        const etabOpt = etabSelect.options[etabSelect.selectedIndex];
+        const specOpt = specSelect.options[specSelect.selectedIndex];
+
+        const draft = {
+  region: regionSelect.value,
+  departement: depSelect.value,
+  ville: villeSelect.value,
+
+  idExamen: idEx,
+  examenLibelle: ex ? ex.libelle : "Examen",
+  dureeMinutes: ex ? ex.dureeMinutes : 30,
+
+  idEtablissement: parseInt(etabSelect.value, 10),
+  etablissementLabel: etabOpt ? etabOpt.textContent : "",
+
+  idSpecialiste: parseInt(specSelect.value, 10),
+  specialisteLabel: specOpt ? specOpt.textContent : "",
+
+  dateRdv: dateInput.value,
+  heureRdv: heureSelect.value
+};
+
+        sessionStorage.setItem("rdvDraft", JSON.stringify(draft));
+        window.location.href = "synthese-rdv.html";
+      } catch {
+        msg.textContent = "Erreur réseau.";
+      }
+    });
+
+    function goBack() {
+      window.location.href = "dashboard.html";
+    }
+
+    // Init (ordre important)
+    (async () => {
+      try {
+        msg.textContent = "";
+
+        await loadEtablissementsCache();
+        await loadSpecialistesCache();
+        await loadExamens();
+
+        await loadRegions();
+        await loadDepartements();
+        await loadVilles();
+
+        fillEtablissementsForVille();
+        await loadCreneaux();
+      } catch (e) {
+        msg.textContent = e.message;
+        console.error(e);
+      }
+    })();
+  </script>
+</body>
+</html>

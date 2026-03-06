@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health North | Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Administration</h1>
+
+    <div class="card">
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button onclick="showTab('examens')">Examens</button>
+        <button onclick="showTab('etabs')">Établissements</button>
+        <button onclick="showTab('dispos')">Disponibilités</button>
+        <button onclick="goBack()" style="background-color:#777;">Retour</button>
+      </div>
+
+      <p id="msg" class="msg" aria-live="polite"></p>
+
+      <!-- ================= EXAMENS ================= -->
+      <section id="tab-examens" style="display:none; margin-top:15px;">
+        <h2>Examens</h2>
+
+        <div style="display:grid; gap:10px; margin:10px 0;">
+          <label>Libellé <input id="ex-libelle" /></label>
+          <label>Durée (minutes) <input id="ex-duree" type="number" min="1" /></label>
+          <button onclick="addExamen()">Ajouter</button>
+        </div>
+
+        <table style="width:100%; border-collapse:collapse;">
+          <thead>
+            <tr><th>ID</th><th>Libellé</th><th>Durée</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="examensBody"></tbody>
+        </table>
+      </section>
+
+      <!-- ============== ETABLISSEMENTS ============== -->
+      <section id="tab-etabs" style="display:none; margin-top:15px;">
+        <h2>Établissements</h2>
+
+        <div style="display:grid; gap:10px; margin:10px 0;">
+          <label>Nom <input id="et-nom" /></label>
+          <label>Ville <input id="et-ville" /></label>
+          <label>Département <input id="et-dep" /></label>
+          <label>Région <input id="et-reg" /></label>
+          <button onclick="addEtab()">Ajouter</button>
+        </div>
+
+        <table style="width:100%; border-collapse:collapse;">
+          <thead>
+            <tr><th>ID</th><th>Nom</th><th>Ville</th><th>Département</th><th>Région</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="etabsBody"></tbody>
+        </table>
+      </section>
+
+      <!-- ============== DISPONIBILITES ============== -->
+      <section id="tab-dispos" style="display:none; margin-top:15px;">
+        <h2>Disponibilités</h2>
+
+        <div style="display:grid; gap:10px; margin:10px 0;">
+          <label>Spécialiste
+            <select id="d-spec"></select>
+          </label>
+          <label>Date <input id="d-date" type="date" /></label>
+          <label>Heure début <input id="d-debut" type="time" /></label>
+          <label>Heure fin <input id="d-fin" type="time" /></label>
+          <button onclick="addDispo()">Ajouter</button>
+          <button onclick="loadDispos()">Rafraîchir</button>
+        </div>
+
+        <table style="width:100%; border-collapse:collapse;">
+          <thead>
+            <tr><th>ID</th><th>Spécialiste</th><th>Date</th><th>Début</th><th>Fin</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="disposBody"></tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const API_BASE = "http://localhost:3000";
+    const token = localStorage.getItem("token");
+    const msg = document.getElementById("msg");
+
+    if (!token) window.location.href = "index.html";
+
+    async function api(url, options = {}) {
+      const res = await fetch(url, {
+        ...options,
+        headers: {
+          "Authorization": "Bearer " + token,
+          ...(options.headers || {})
+        }
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.message || data.error || ("Erreur " + res.status));
+      }
+      return data;
+    }
+
+    function setMsg(text, ok=false) {
+      msg.style.color = ok ? "green" : "red";
+      msg.textContent = text;
+      if (ok) setTimeout(() => msg.textContent = "", 2000);
+    }
+
+    function showTab(name) {
+      document.getElementById("tab-examens").style.display = (name === "examens") ? "block" : "none";
+      document.getElementById("tab-etabs").style.display = (name === "etabs") ? "block" : "none";
+      document.getElementById("tab-dispos").style.display = (name === "dispos") ? "block" : "none";
+      setMsg("");
+      if (name === "examens") loadExamens();
+      if (name === "etabs") loadEtabs();
+      if (name === "dispos") { loadSpecsSelect(); loadDispos(); }
+    }
+
+    function goBack() {
+      window.location.href = "dashboard.html";
+    }
+
+    // ====================== EXAMENS ======================
+    async function loadExamens() {
+      try {
+        const exams = await api(`${API_BASE}/examens`);
+        const body = document.getElementById("examensBody");
+        body.innerHTML = "";
+        exams.forEach(ex => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${ex.idExamen}</td>
+            <td><input value="${escapeHtml(ex.libelle)}" id="ex-lib-${ex.idExamen}" /></td>
+            <td><input type="number" min="1" value="${ex.dureeMinutes}" id="ex-dur-${ex.idExamen}" /></td>
+            <td>
+              <button onclick="saveExamen(${ex.idExamen})">Enregistrer</button>
+              <button onclick="delExamen(${ex.idExamen})" style="background:#e74c3c;">Supprimer</button>
+            </td>
+          `;
+          body.appendChild(tr);
+        });
+      } catch (e) { setMsg(e.message); }
+    }
+
+    async function addExamen() {
+      try {
+        const libelle = document.getElementById("ex-libelle").value.trim();
+        const dureeMinutes = parseInt(document.getElementById("ex-duree").value, 10);
+        if (!libelle || !dureeMinutes) return setMsg("Libellé + durée requis");
+
+        await api(`${API_BASE}/examens`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ libelle, dureeMinutes })
+        });
+
+        document.getElementById("ex-libelle").value = "";
+        document.getElementById("ex-duree").value = "";
+        setMsg("Examen ajouté ✅", true);
+        loadExamens();
+      } catch (e) { setMsg(e.message); }
+    }
+
+    async function saveExamen(id) {
+      try {
+        const libelle = document.getElementById(`ex-lib-${id}`).value.trim();
+        const dureeMinutes = parseInt(document.getElementById(`ex-dur-${id}`).value, 10);
+        await api(`${API_BASE}/examens/${id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ libelle, dureeMinutes })
+        });
+        setMsg("Examen modifié ✅", true);
+      } catch (e) { setMsg(e.message); }
+    }
+
+    async function delExamen(id) {
+      if (!confirm("Supprimer cet examen ?")) return;
+      try {
+        await api(`${API_BASE}/examens/${id}`, { method: "DELETE" });
+        setMsg("Examen supprimé ✅", true);
+        loadExamens();
+      } catch (e) { setMsg(e.message); }
+    }
+
+    // ================== ETABLISSEMENTS ==================
+    async function loadEtabs() {
+      try {
+        const etabs = await api(`${API_BASE}/admin/etablissements`);
+        const body = document.getElementById("etabsBody");
+        body.innerHTML = "";
+        etabs.forEach(et => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${et.idEtablissement}</td>
+            <td><input value="${escapeHtml(et.nom)}" id="et-nom-${et.idEtablissement}" /></td>
+            <td><input value="${escapeHtml(et.ville)}" id="et-ville-${et.idEtablissement}" /></td>
+            <td><input value="${escapeHtml(et.departement || "")}" id="et-dep-${et.idEtablissement}" /></td>
+            <td><input value="${escapeHtml(et.region || "")}" id="et-reg-${et.idEtablissement}" /></td>
+            <td>
+              <button onclick="saveEtab(${et.idEtablissement})">Enregistrer</button>
+              <button onclick="delEtab(${et.idEtablissement})" style="background:#e74c3c;">Supprimer</button>
+            </td>
+          `;
+          body.appendChild(tr);
+        });
+      } catch (e) { setMsg(e.message); }
+    }
+
+    async function addEtab() {
+      try {
+        const nom = document.getElementById("et-nom").value.trim();
+        const ville = document.getElementById("et-ville").value.trim();
+        const departement = document.getElementById("et-dep").value.trim();
+        const region = document.getElementById("et-reg").value.trim();
+
+        if (!nom || !ville) return setMsg("Nom + ville requis");
+
+        await api(`${API_BASE}/admin/etablissements`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nom, ville, departement, region })
+        });
+
+        document.getElementById("et-nom").value = "";
+        document.getElementById("et-ville").value = "";
+        document.getElementById("et-dep").value = "";
+        document.getElementById("et-reg").value = "";
+
+        setMsg("Établissement ajouté ✅", true);
+        loadEtabs();
+      } catch (e) { setMsg(e.message); }
+    }
+
+    async function saveEtab(id) {
+      try {
+        const nom = document.getElementById(`et-nom-${id}`).value.trim();
+        const ville = document.getElementById(`et-ville-${id}`).value.trim();
+        const departement = document.getElementById(`et-dep-${id}`).value.trim();
+        const region = document.getElementById(`et-reg-${id}`).value.trim();
+
+        await api(`${API_BASE}/admin/etablissements/${id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nom, ville, departement, region })
+        });
+
+        setMsg("Établissement modifié ✅", true);
+      } catch (e) { setMsg(e.message); }
+    }
+
+    async function delEtab(id) {
+      if (!confirm("Supprimer cet établissement ?")) return;
+      try {
+        await api(`${API_BASE}/admin/etablissements/${id}`, { method: "DELETE" });
+        setMsg("Établissement supprimé ✅", true);
+        loadEtabs();
+      } catch (e) { setMsg(e.message); }
+    }
+
+    // ================== DISPONIBILITES ==================
+    async function loadSpecsSelect() {
+      try {
+        // réutilise l'endpoint public /specialistes si tu l’as, sinon /admin/specialistes
+        const specs = await api(`${API_BASE}/specialistes`);
+        const sel = document.getElementById("d-spec");
+        sel.innerHTML = "";
+        specs.forEach(s => {
+          const opt = document.createElement("option");
+          opt.value = s.idSpecialiste;
+          opt.textContent = `${s.nom} ${s.prenom} - ${s.specialite || ""}`;
+          sel.appendChild(opt);
+        });
+      } catch (e) { setMsg(e.message); }
+    }
+
+    async function loadDispos() {
+      try {
+        const dispos = await api(`${API_BASE}/admin/disponibilites`);
+        const body = document.getElementById("disposBody");
+        body.innerHTML = "";
+        dispos.forEach(d => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${d.idDisponibilite}</td>
+            <td>${escapeHtml(d.nom)} ${escapeHtml(d.prenom)}</td>
+            <td>${d.dateDispo}</td>
+            <td>${String(d.heureDebut).substring(0,5)}</td>
+            <td>${String(d.heureFin).substring(0,5)}</td>
+            <td>
+              <button onclick="delDispo(${d.idDisponibilite})" style="background:#e74c3c;">Supprimer</button>
+            </td>
+          `;
+          body.appendChild(tr);
+        });
+      } catch (e) { setMsg(e.message); }
+    }
+
+    async function addDispo() {
+      try {
+        const idSpecialiste = parseInt(document.getElementById("d-spec").value, 10);
+        const dateDispo = document.getElementById("d-date").value;
+        const heureDebut = document.getElementById("d-debut").value;
+        const heureFin = document.getElementById("d-fin").value;
+
+        if (!idSpecialiste || !dateDispo || !heureDebut || !heureFin) {
+          return setMsg("Tous les champs disponibilités sont requis");
+        }
+
+        await api(`${API_BASE}/admin/disponibilites`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            idSpecialiste,
+            dateDispo,
+            heureDebut: heureDebut + ":00",
+            heureFin: heureFin + ":00"
+          })
+        });
+
+        setMsg("Disponibilité ajoutée ✅", true);
+        loadDispos();
+      } catch (e) { setMsg(e.message); }
+    }
+
+    async function delDispo(id) {
+      if (!confirm("Supprimer cette disponibilité ?")) return;
+      try {
+        await api(`${API_BASE}/admin/disponibilites/${id}`, { method: "DELETE" });
+        setMsg("Disponibilité supprimée ✅", true);
+        loadDispos();
+      } catch (e) { setMsg(e.message); }
+    }
+
+    // Simple escape HTML pour inputs
+    function escapeHtml(s) {
+      return String(s ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    // Démarre sur Examens
+    showTab("examens");
+  </script>
+</body>
+</html>

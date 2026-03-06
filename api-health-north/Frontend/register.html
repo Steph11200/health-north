@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health North | Inscription</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Inscription patient</h1>
+
+    <form id="registerForm" class="card">
+      <label>Nom <input id="nom" required /></label>
+      <label>Prénom <input id="prenom" required /></label>
+      <label>Email <input id="email" type="email" required /></label>
+      <label>Mot de passe <input id="motDePasse" type="password" required /></label>
+
+      <label>Date de naissance <input id="dateNaissance" type="date" required/></label>
+      <label>N° Sécu <input id="numSecu" required/></label>
+      <label>Téléphone <input id="telephone" /></label>
+      <label>Adresse postale <input id="adressePostale" /></label>
+
+      <button type="submit">Créer mon compte</button>
+      <p id="msg" class="msg" aria-live="polite"></p>
+
+      <button type="button" onclick="window.location.href='index.html'">Retour</button>
+    </form>
+  </main>
+
+  <script>
+    const API_BASE = "http://localhost:3000";
+    const msg = document.getElementById("msg");
+
+    document.getElementById("registerForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      msg.textContent = "";
+
+      const body = {
+        nom: document.getElementById("nom").value.trim(),
+        prenom: document.getElementById("prenom").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        motDePasse: document.getElementById("motDePasse").value,
+        dateNaissance: document.getElementById("dateNaissance").value || null,
+        numSecu: document.getElementById("numSecu").value.trim() || null,
+        telephone: document.getElementById("telephone").value.trim() || null,
+        adressePostale: document.getElementById("adressePostale").value.trim() || null
+      };
+
+      try {
+        const res = await fetch(`${API_BASE}/auth/patient/register`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          msg.textContent = data.message || data.error || "Inscription impossible";
+          return;
+        }
+
+        localStorage.setItem("token", data.token);
+        window.location.href = "dashboard.html";
+      } catch {
+        msg.textContent = "Erreur réseau.";
+      }
+    });
+  </script>
+</body>
+</html>

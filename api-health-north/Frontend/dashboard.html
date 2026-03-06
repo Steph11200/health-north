@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health North | Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Mon espace patient</h1>
+
+    <div class="card">
+      <button onclick="goTo('profil.html')">Mon profil</button>
+      <button onclick="goTo('rdv.html')">Mes rendez-vous</button>
+      <button onclick="goTo('prise-rdv.html')">Prendre un rendez-vous</button>
+      <button onclick="goTo('etablissements.html')">Voir établissements</button>
+      <button onclick="goTo('specialistes.html')">Voir spécialistes</button>
+      <button onclick="logout()" style="background-color:#e74c3c;">Déconnexion</button>
+      <button onclick="goTo('admin.html')">Administration</button>
+    </div>
+  </main>
+
+  <script>
+    // Vérifie si token présent
+    const token = localStorage.getItem("token");
+    if (!token) {
+      window.location.href = "index.html";
+    }
+
+    function goTo(page) {
+      window.location.href = page;
+    }
+
+    function logout() {
+      localStorage.removeItem("token");
+      window.location.href = "index.html";
+    }
+  </script>
+  </body>
+</html>

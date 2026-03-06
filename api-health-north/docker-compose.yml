@@ -1,0 +1,26 @@
+services:
+  db:
+    image: mariadb:latest
+    container_name: mariadb-health
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: health_north
+    ports:
+      - "3306:3306"
+
+  api:
+    build:
+      context: .
+    container_name: api-health-north
+    environment:
+      PORT: 3000
+      DB_HOST: mariadb-health
+      DB_USER: root
+      DB_PASS: root
+      DB_NAME: health_north
+      LDAP_URL: ldap://host.docker.internal:389
+      JWT_SECRET: dev_secret_change_me
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health North | Établissements</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Établissements</h1>
+
+    <div class="card">
+      <table id="etabTable" style="width:100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Ville</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <button onclick="goBack()">Retour</button>
+    </div>
+  </main>
+
+  <script>
+    const API_BASE = "http://localhost:3000";
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      window.location.href = "index.html";
+    }
+
+    async function loadEtablissements() {
+      const res = await fetch(`${API_BASE}/etablissements`, {
+        headers: {
+          "Authorization": "Bearer " + token
+        }
+      });
+
+      if (!res.ok) {
+        alert("Erreur chargement établissements");
+        return;
+      }
+
+      const data = await res.json();
+      const tbody = document.querySelector("#etabTable tbody");
+      tbody.innerHTML = "";
+
+      data.forEach(etab => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${etab.nom}</td>
+          <td>${etab.ville}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function goBack() {
+      window.location.href = "dashboard.html";
+    }
+
+    loadEtablissements();
+  </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health North | Mes rendez-vous</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Mes rendez-vous</h1>
+
+    <div class="card">
+      <table id="rdvTable" style="width:100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Heure</th>
+            <th>Spécialiste</th>
+            <th>Établissement</th>
+            <th>Statut</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <button onclick="goBack()">Retour</button>
+    </div>
+  </main>
+
+  <script>
+    const API_BASE = "http://localhost:3000";
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      window.location.href = "index.html";
+    }
+
+    async function loadRdv() {
+      const res = await fetch(`${API_BASE}/rendezvous/me`, {
+        headers: {
+          "Authorization": "Bearer " + token
+        }
+      });
+
+      const data = await res.json();
+      const tbody = document.querySelector("#rdvTable tbody");
+      tbody.innerHTML = "";
+
+      data.forEach(rdv => {
+        const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>${rdv.dateRdv}</td>
+        <td>${rdv.heureRdv}</td>
+        <td>${rdv.specialisteNom} ${rdv.specialistePrenom}</td>
+        <td>${rdv.etablissementNom}</td>
+        <td>${rdv.statut}</td>
+        <td>
+          ${rdv.statut !== "Annulé" ? `<button onclick="annulerRdv(${rdv.idRdv})">Annuler</button>` : ""}
+          <div style="margin-top:8px;">
+            <select id="typeDoc-${rdv.idRdv}">
+              <option value="ordonnance">Ordonnance</option>
+              <option value="certificat">Certificat médical</option>
+              <option value="autre">Autre</option>
+            </select>
+            <input id="file-${rdv.idRdv}" type="file" style="margin-top:6px; width:100%;" />
+            <button style="margin-top:6px;" onclick="uploadDoc(${rdv.idRdv})">Uploader</button>
+          </div>
+        </td>
+      `;
+
+      tbody.appendChild(row);
+      });
+    }
+
+    async function annulerRdv(id) {
+      if (!confirm("Confirmer l'annulation ?")) return;
+
+      await fetch(`${API_BASE}/rendezvous/${id}/annuler`, {
+        method: "PUT",
+        headers: {
+          "Authorization": "Bearer " + token
+        }
+      });
+
+      loadRdv();
+    }
+async function uploadDoc(idRdv) {
+  const fileInput = document.getElementById(`file-${idRdv}`);
+  const typeSelect = document.getElementById(`typeDoc-${idRdv}`);
+
+  if (!fileInput.files || fileInput.files.length === 0) {
+    alert("Choisis un fichier d'abord.");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("idRdv", idRdv);
+  formData.append("typeDocument", typeSelect.value);
+  formData.append("file", fileInput.files[0]);
+
+  const res = await fetch(`${API_BASE}/documents`, {
+    method: "POST",
+    headers: {
+      "Authorization": "Bearer " + token
+    },
+    body: formData
+  });
+
+  const data = await res.json().catch(() => ({}));
+
+  if (!res.ok) {
+    alert(data.message || data.error || "Erreur upload");
+    return;
+  }
+
+  alert("Document uploadé ✅");
+  fileInput.value = "";
+}
+
+
+    function goBack() {
+      window.location.href = "dashboard.html";
+    }
+
+    loadRdv();
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health North | Synthèse RDV</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Synthèse et validation</h1>
+
+    <div class="card">
+      <div id="summary" style="font-size:14px; color:#333; line-height:1.6;"></div>
+
+      <button id="confirmBtn">Confirmer le rendez-vous</button>
+      <button type="button" onclick="backToForm()">Modifier</button>
+
+      <p id="msg" class="msg" aria-live="polite"></p>
+    </div>
+  </main>
+
+  <script>
+    const API_BASE = "http://localhost:3000";
+    const token = localStorage.getItem("token");
+    if (!token) window.location.href = "index.html";
+
+    const msg = document.getElementById("msg");
+    const summaryDiv = document.getElementById("summary");
+
+    const draft = JSON.parse(sessionStorage.getItem("rdvDraft") || "null");
+    if (!draft) {
+      window.location.href = "prise-rdv.html";
+    }
+
+    summaryDiv.innerHTML = `
+      <strong>Région :</strong> ${draft.region}<br>
+      <strong>Département :</strong> ${draft.departement}<br>
+      <strong>Ville :</strong> ${draft.ville}<br><br>
+
+      <strong>Examen :</strong> ${draft.examenLibelle}<br>
+      <strong>Durée :</strong> ${draft.dureeMinutes} min<br><br>
+
+      <strong>Établissement :</strong> ${draft.etablissementLabel}<br>
+      <strong>Spécialiste :</strong> ${draft.specialisteLabel}<br><br>
+
+      <strong>Date :</strong> ${draft.dateRdv}<br>
+      <strong>Créneau :</strong> ${draft.heureRdv}<br>
+    `;
+
+    document.getElementById("confirmBtn").addEventListener("click", async () => {
+      msg.textContent = "";
+
+      try {
+        const res = await fetch(`${API_BASE}/rendezvous`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + token
+          },
+          body: JSON.stringify({
+            dateRdv: draft.dateRdv,
+            heureRdv: draft.heureRdv + ":00",
+            typeIntervention: draft.examenLibelle,
+            statut: "Planifié",
+            idEtablissement: draft.idEtablissement,
+            idSpecialiste: draft.idSpecialiste,
+            idPatient: 999
+          })
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          msg.textContent = data.message || data.error || "Erreur création RDV";
+          return;
+        }
+
+        sessionStorage.removeItem("rdvDraft");
+        alert("Rendez-vous confirmé ✅");
+        window.location.href = "rdv.html";
+      } catch {
+        msg.textContent = "Erreur réseau.";
+      }
+    });
+
+    function backToForm() {
+      window.location.href = "prise-rdv.html";
+    }
+  </script>
+</body>
+</html>

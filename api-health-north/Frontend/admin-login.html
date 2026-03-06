@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health North | Admin login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Connexion Administrateur</h1>
+
+    <form id="form" class="card">
+      <label>Login DN LDAP
+        <input id="loginDn" placeholder="cn=admin,dc=health,dc=local" required />
+      </label>
+
+      <label>Mot de passe LDAP
+        <input id="password" type="password" required />
+      </label>
+
+      <button type="submit">Se connecter</button>
+      <p id="msg" class="msg" aria-live="polite"></p>
+
+      <button type="button" onclick="window.location.href='index.html'">Retour</button>
+    </form>
+  </main>
+
+  <script>
+    const API_BASE = "http://localhost:3000";
+    const msg = document.getElementById("msg");
+
+    document.getElementById("form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      msg.textContent = "";
+
+      const body = {
+        loginDn: document.getElementById("loginDn").value.trim(),
+        password: document.getElementById("password").value
+      };
+
+      try {
+        const res = await fetch(`${API_BASE}/auth/staff/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          msg.textContent = data.message || data.error || "Connexion impossible";
+          return;
+        }
+
+        localStorage.setItem("token", data.token);
+        window.location.href = "admin.html";
+      } catch {
+        msg.textContent = "Erreur réseau.";
+      }
+    });
+  </script>
+</body>
+</html>
