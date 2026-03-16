@@ -6,7 +6,13 @@ USE health_north;
 INSERT INTO Etablissement (nom, type, adresse, ville, departement, region, telephone)
 VALUES
 ('Clinique Health North Paris', 'Clinique', '12 rue de Paris', 'Paris', 'Paris', 'Ile-de-France', '0102030405'),
-('Laboratoire Health North Lyon', 'Laboratoire', '5 avenue Lyon', 'Lyon', 'Rhône', 'Auvergne-Rhône-Alpes', '0607080910');
+('Laboratoire Health North Paris', 'Laboratoire', '1 avenue Montaigne', 'Paris', 'Paris', 'Ile-de-France', '0127581911'),
+('Clinique Health North Lyon', 'Clinique', '5 rue du four', 'Lyon', 'Rhône', 'Auvergne-Rhône-Alpes', '0302430415'),
+('Laboratoire Health North Lyon', 'Laboratoire', '5 avenue Lyon', 'Lyon', 'Rhône', 'Auvergne-Rhône-Alpes', '0307080910'),
+('Laboratoire Health North Toulouse', 'Laboratoire', '5 avenue des Pyrénées', 'Toulouse', 'Haute-Garonne', 'Occitanie', '0502457889'),
+('Clinique Health North Toulouse', 'Clinique', '5 rue du prés', 'Toulouse', 'Haute-Garonne', 'Occitanie', '0502730815'),
+('Clinique Health North Bordeaux', 'Clinique', '7 rue des cyprés', 'Bordeaux', 'Gironde', 'Nouvelle-Aquitaine', '0202430415'),
+('Laboratoire Health North Bordeaux', 'Laboratoire', '5 rue des Mocassins', 'Bordeaux', 'Gironde', 'Nouvelle-Aquitaine', '0207180518');
 
 -- =========================
 -- SPECIALISTES
@@ -14,6 +20,9 @@ VALUES
 INSERT INTO Specialiste (nom, prenom, specialite)
 VALUES
 ('Dupont', 'Jean', 'Cardiologie'),
+('Durand', 'Paul', 'Nephrologie'),
+('Varent', 'Julie', 'Pediatrie'),
+('Kalfaoui', 'Ismael', 'ORL'),
 ('Martin', 'Claire', 'Dermatologie');
 
 -- =========================

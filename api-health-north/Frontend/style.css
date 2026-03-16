@@ -10,8 +10,9 @@ body {
   background: linear-gradient(135deg, #4f8cff, #6ec6ff);
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 40px;
 }
 
 .container {

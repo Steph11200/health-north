@@ -3,40 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|c:\\users\\itins\\projet healthnorth\\healthnorthdesktop\\healthnorthapp\\healthnorthapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|solutionrelative:healthnorthapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|c:\\users\\itins\\projet healthnorth\\healthnorthdesktop\\healthnorthapp\\healthnorthapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|solutionrelative:healthnorthapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9478A587-E846-4422-8D7D-6A8900EAFF14}|HealthNorthApp\\HealthNorthApp.csproj|C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\healthnorthapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9478A587-E846-4422-8D7D-6A8900EAFF14}|HealthNorthApp\\HealthNorthApp.csproj|solutionrelative:healthnorthapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|c:\\users\\itins\\projet healthnorth\\healthnorthdesktop\\healthnorthapp\\healthnorthapp\\forms\\factureform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|solutionrelative:healthnorthapp\\forms\\factureform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9478A587-E846-4422-8D7D-6A8900EAFF14}|HealthNorthApp\\HealthNorthApp.csproj|C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\healthnorthapp\\forms\\planningform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9478A587-E846-4422-8D7D-6A8900EAFF14}|HealthNorthApp\\HealthNorthApp.csproj|solutionrelative:healthnorthapp\\forms\\planningform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9478A587-E846-4422-8D7D-6A8900EAFF14}|HealthNorthApp\\HealthNorthApp.csproj|C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\healthnorthapp\\forms\\factureform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9478A587-E846-4422-8D7D-6A8900EAFF14}|HealthNorthApp\\HealthNorthApp.csproj|solutionrelative:healthnorthapp\\forms\\factureform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|c:\\users\\itins\\projet healthnorth\\healthnorthdesktop\\healthnorthapp\\healthnorthapp\\forms\\factureform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|solutionrelative:healthnorthapp\\forms\\factureform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|c:\\users\\itins\\projet healthnorth\\healthnorthdesktop\\healthnorthapp\\healthnorthapp\\forms\\planningform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|solutionrelative:healthnorthapp\\forms\\planningform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|c:\\users\\itins\\projet healthnorth\\healthnorthdesktop\\healthnorthapp\\healthnorthapp\\models\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5927FBE-A4F5-BBCC-25F8-9DD76837C529}|HealthNorthApp\\HealthNorthApp.csproj|solutionrelative:healthnorthapp\\models\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,123 +14,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginForm.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\LoginForm.cs",
-              "RelativeDocumentMoniker": "HealthNorthApp\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\LoginForm.cs [Conception]",
-              "RelativeToolTip": "HealthNorthApp\\LoginForm.cs [Conception]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T20:30:02.182Z",
-              "EditorCaption": " [Conception]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FactureForm.cs",
-              "DocumentMoniker": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\Forms\\FactureForm.cs",
-              "RelativeDocumentMoniker": "HealthNorthApp\\Forms\\FactureForm.cs",
-              "ToolTip": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\Forms\\FactureForm.cs",
-              "RelativeToolTip": "HealthNorthApp\\Forms\\FactureForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T19:37:59.868Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\LoginForm.cs",
-              "RelativeDocumentMoniker": "HealthNorthApp\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\LoginForm.cs",
-              "RelativeToolTip": "HealthNorthApp\\LoginForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T19:58:18.662Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LoginResponse.cs",
-              "DocumentMoniker": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\Models\\LoginResponse.cs",
-              "RelativeDocumentMoniker": "HealthNorthApp\\Models\\LoginResponse.cs",
-              "ToolTip": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\Models\\LoginResponse.cs",
-              "RelativeToolTip": "HealthNorthApp\\Models\\LoginResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:13:32.72Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PlanningForm.cs",
-              "DocumentMoniker": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\Forms\\PlanningForm.cs",
-              "RelativeDocumentMoniker": "HealthNorthApp\\Forms\\PlanningForm.cs",
-              "ToolTip": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\Forms\\PlanningForm.cs",
-              "RelativeToolTip": "HealthNorthApp\\Forms\\PlanningForm.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:25:19.289Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FactureForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\Forms\\FactureForm.Designer.cs",
-              "RelativeDocumentMoniker": "HealthNorthApp\\Forms\\FactureForm.Designer.cs",
-              "ToolTip": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\Forms\\FactureForm.Designer.cs",
-              "RelativeToolTip": "HealthNorthApp\\Forms\\FactureForm.Designer.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAtwD4AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:41:38.35Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoginForm.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\LoginForm.cs",
-              "RelativeDocumentMoniker": "HealthNorthApp\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\itins\\Projet2desktop\\HealthNorthApp\\HealthNorthApp\\LoginForm.cs [Conception]",
-              "RelativeToolTip": "..\\..\\..\\Projet2desktop\\HealthNorthApp\\HealthNorthApp\\LoginForm.cs [Conception]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T18:09:41.299Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "PlanningForm.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\Forms\\PlanningForm.cs",
               "RelativeDocumentMoniker": "HealthNorthApp\\Forms\\PlanningForm.cs",
               "ToolTip": "C:\\Users\\itins\\Projet2desktop\\HealthNorthApp\\HealthNorthApp\\Forms\\PlanningForm.cs [Conception]",
               "RelativeToolTip": "..\\..\\..\\Projet2desktop\\HealthNorthApp\\HealthNorthApp\\Forms\\PlanningForm.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:39:37.685Z"
+              "WhenOpened": "2026-03-03T20:39:37.685Z",
+              "IsPinned": true
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FactureForm.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\itins\\Projet HealthNorth\\HealthNorthdesktop\\HealthNorthApp\\HealthNorthApp\\Forms\\FactureForm.cs",
-              "RelativeDocumentMoniker": "HealthNorthApp\\Forms\\FactureForm.cs",
-              "ToolTip": "C:\\Users\\itins\\Projet2desktop\\HealthNorthApp\\HealthNorthApp\\Forms\\FactureForm.cs [Conception]",
-              "RelativeToolTip": "..\\..\\..\\Projet2desktop\\HealthNorthApp\\HealthNorthApp\\Forms\\FactureForm.cs [Conception]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T19:36:34.817Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         }

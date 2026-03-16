@@ -21,7 +21,7 @@ namespace HealthNorthApp.Forms
         private readonly ApiClient _api;
         private readonly RendezVousDto _rdv;
 
-        // règles de calcul (tu peux ajuster)
+        // règles de calcul
         private const decimal TVA_RATE = 0.20m;          // 20%
         private const decimal SECU_RATE = 0.70m;         // 70%
         private const decimal MUTUELLE_RATE = 0.20m;     // 20% (sur TTC)
@@ -51,7 +51,7 @@ namespace HealthNorthApp.Forms
             lblEtab.Text = $"Établissement : {_rdv.etablissementNom}";
             lblSpec.Text = $"Spécialiste : {_rdv.specialisteNom} {_rdv.specialistePrenom}";
 
-            // Ajustement prix selon type (simple)
+            // Ajustement prix selon type
             _prixHT = GuessPrixHT(_rdv.typeIntervention);
         }
 

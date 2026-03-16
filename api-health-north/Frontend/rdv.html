@@ -34,6 +34,11 @@
     const API_BASE = "http://localhost:3000";
     const token = localStorage.getItem("token");
 
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      return date.toLocaleDateString("fr-FR");
+    }
+    
     if (!token) {
       window.location.href = "index.html";
     }
@@ -53,7 +58,7 @@
         const row = document.createElement("tr");
 
       row.innerHTML = `
-        <td>${rdv.dateRdv}</td>
+        <td>${formatDate(rdv.dateRdv)}</td>
         <td>${rdv.heureRdv}</td>
         <td>${rdv.specialisteNom} ${rdv.specialistePrenom}</td>
         <td>${rdv.etablissementNom}</td>
