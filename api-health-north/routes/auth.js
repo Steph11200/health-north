@@ -50,6 +50,9 @@ router.post("/staff/login", (req, res) => {
 // LOGIN PATIENT (BDD)
 // ======================
 router.post("/patient/login", async (req, res) => {
+    console.log("LOGIN APPELE");
+    console.log(req.body);
+
     const { email, motDePasse } = req.body;
 
     try {

@@ -1,0 +1,8 @@
+node_modules/
+.expo/
+.vs/
+bin/
+obj/
+*.log
+.env
+uploads/
